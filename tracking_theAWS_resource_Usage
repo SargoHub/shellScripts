@@ -34,6 +34,15 @@ echo "IAM users list"
 aws iam list-users > resourcestracker.txt
 
 
+#####################The scripts end here
+
+#to integrate this script with the cron tab
+
+crontab -e
+0 6 * * * /path/to/aws_resource_tracker.sh
+
+
+
 
 
 
