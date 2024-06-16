@@ -7,7 +7,7 @@
 
 vim aws_resource_tracker.sh
 
-#!/bib/bash
+#!/bin/bash
 #####
 # Author: Saransh
 # Use: To report the AWS resource usage
@@ -24,7 +24,7 @@ aws s3 ls > resourcestracker.txt          #pushing this info into a file
 #list EC2 instances
 echo "ec2 lists"
 aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId' > resourcestracker.txt     #jq is JSON parcer use to filter from the JSON output
-jq 
+
 #list the lambda functions
 echo "list the lambda funstions"
 aws lambda list-functions > resourcestracker.txt
