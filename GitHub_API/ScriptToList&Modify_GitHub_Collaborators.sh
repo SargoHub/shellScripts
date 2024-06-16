@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ########
 # About : This script is used to list GitHub repo collaborators using the GitHub API
 # Source : Abhishek Veeramala
@@ -7,8 +9,7 @@
 # Install jq as well for the script
 ###########
 
-
-#!/bin/bash
+helper()
 
 # GitHub API URL
 API_URL="https://api.github.com"
