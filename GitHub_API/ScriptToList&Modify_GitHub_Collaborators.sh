@@ -14,11 +14,11 @@ helper()
 # GitHub API URL
 API_URL="https://api.github.com"
 
-# GitHub username and personal access token
+# GitHub username and personal access token has to be exported before running the script
 USERNAME=$username
 TOKEN=$token
 
-# User and Repository information
+# User and Repository information have to be added as the cmd arguments
 REPO_OWNER=$1
 REPO_NAME=$2
 
