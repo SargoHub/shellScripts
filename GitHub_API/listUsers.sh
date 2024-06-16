@@ -9,8 +9,6 @@
 # Install jq as well for the script
 ###########
 
-helper()
-
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -18,7 +16,9 @@ API_URL="https://api.github.com"
 USERNAME=$username
 TOKEN=$token
 
-# User and Repository information have to be added as the cmd arguments
+# Organisation and Repository information have to be added as the cmd arguments
+# 1st argument = github organisation name
+# 2nd argument = repository name in the org.
 REPO_OWNER=$1
 REPO_NAME=$2
 
@@ -48,12 +48,14 @@ function list_users_with_read_access {
 }
 
 function helper {
- expected_cmd_args=2
- if [ $# -ne $expected_cmd_args]; then
-  echo "please enter the req. number of cmd args"
+    expected_cmd_args=2
+    if [ $# -ne $expected_cmd_args]; then
+        echo "please enter the req. number of cmd args"
+    fi
 }
 
-# Main script
+helper $#
 
+# Main script
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
 list_users_with_read_access
